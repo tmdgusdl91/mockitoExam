@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
 
 public class MockitoStudy {
 
@@ -55,7 +56,7 @@ public class MockitoStudy {
         String returnValue = mockList.get(0).toString();
         int size = mockList.size();
         assertEquals("apple", returnValue);
-        assertEquals(10 , size);
+        assertEquals(9 , size);
     }
 
     @Test
@@ -74,28 +75,6 @@ public class MockitoStudy {
         verify(mtc).setAge(anyInt());
         verify(mtc).setName(anyString());
     }
-}
 
-class MockTestClass {
-
-    private int age;
-
-    private String name;
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
 }
